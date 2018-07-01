@@ -1,0 +1,25 @@
+body {
+  padding-top: 70px;
+}
+.panel-body {
+  padding: 15px;
+}
+.dropdownOptions {
+  padding: 0px 15px 15px;
+}
+.btn-group-vertical {
+  padding: 20px;
+}
+.custom-radio {
+  padding: 5px 5px 0px 5px;
+  font-size: small;
+  font-style: normal;
+  font-weight: normal;
+}
+.configInterestText {
+  font-size: large;
+}
+
+.configuration {
+  padding: 20px;
+}

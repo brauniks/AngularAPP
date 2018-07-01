@@ -1,0 +1,130 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-2 col-md-offset-1">
+			<div class="row dropdownOptions">
+				<p>Kod Finansowy</p>
+				<select ng-model="agenda.selectedFinancialCode">
+					<option ng-repeat="code in agenda.financeCodes" value="{{code.name}}">{{code.name}}</option>
+				</select>
+				<p>{{selectedFinancialCode}}</p>
+			</div>
+			<div class="row dropdownOptions">
+				<p>Kod zobowiazania</p>
+				<select ng-model="agenda.selectedCommitmentCode">
+					<option ng-repeat="code in agenda.commitmentCodes" value="{{code.name}}">{{code.name}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-md-2 col-md-offset-1">
+			<div class="panel panel-default">
+				<div class="panel-heading">Składniki</div>
+				<div class="panel-body" dragula='"bag-one"' dragula-model="agenda.elements" dragula-scope='$parent'>
+					<div ng-repeat="item in agenda.elements">
+						<button type="button" class="btn btn-basic">{{item.name}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-panel">
+			<div class="col-md-2 col-md-offset-1">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">WPS</div>
+						<div class="panel-body" dragula='"bag-one"' dragula-model="agenda.wpsElements" dragula-scope='$parent'>
+							<div ng-repeat="item in agenda.wpsElements">
+								<button type="button" class="btn btn-basic">{{item.name}}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">Koszta Sądowe</div>
+						<div class="panel-body" dragula='"bag-one"' dragula-model="agenda.processCostsElements" dragula-scope='$parent'>
+							<div ng-repeat="item in agenda.processCostsElements">
+								<button type="button" class="btn btn-basic">{{item.name}}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">Koszta Egzekucyjne</div>
+						<div class="panel-body" dragula='"bag-one"' dragula-model="agenda.bailiffCostsElements" dragula-scope='$parent'>
+							<div ng-repeat="item in agenda.bailiffCostsElements">
+								<button type="button" class="btn btn-basic">{{item.name}}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2 col-md-offset-1">
+			<div class="row">
+				<div class="configInterestText">
+
+					<strong>Od czego naliczamy odsetki</strong>
+				</div>
+				<div class="panel panel-default">
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio1" name="customRadio" ng-model="agenda.interestElement" value="WPS">
+						<label class="custom-control-label" for="customRadio1">WPS</label>
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio2" name="customRadio" ng-model="agenda.interestElement" value="Kapitał">
+						<label class="custom-control-label" for="customRadio2">Kapitał</label>
+					</div>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="btn-group-vertical">
+					<button class="btn btn-basic">Zacznij od nowa</button>
+					<button ng-disabled="!agenda.isFilled()" class="btn btn-primary" ng-click="agenda.compare()">Porownaj</button>
+					<button class="btn btn-success">Zatwierdz</button>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+<div class="panel panel-default configuration">
+	<div class="panel panel-heading">Konfiguracja</div>
+	<div class="panel panel-body">
+
+		<div class="col-md-2 col-md-offset-1">
+			<p>Koszta Egzekucyjne</p>
+			<div ng-repeat="item in agenda.bailiffCostsElements">
+				{{item.name}}
+			</div>
+		</div>
+		<div class="col-md-2 col-md-offset-1">
+			<p>Koszta Sądowe</p>
+			<div ng-repeat="item in agenda.processCostsElements">
+				{{item.name}}
+			</div>
+		</div>
+		<div class="col-md-2 col-md-offset-1">
+			<p>WPS</p>
+			<div ng-repeat="item in agenda.wpsElements">
+				{{item.name}}
+			</div>
+		</div>
+		<div class="col-md-2 col-md-offset-1">
+			<p>Kod Zobowiązania: {{agenda.selectedCommitmentCode}}</p>
+			<p>Kod Finansowy: {{agenda.selectedFinancialCode}}</p>
+			<p>Odsetki od: {{agenda.interestElement}}</p>
+		</div>
+
+	</div>
+</div>
