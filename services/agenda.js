@@ -16,6 +16,38 @@ app.service("Agenda", function() {
     return false;
   };
 
+    this.elementCollection = [
+      {
+        name:"WPS",
+        initial:"100",
+        actual: "200"
+      },
+      {
+        name:"Koszty zastępstwa w egzekucji",
+        initial:"505",
+        actual: "5000"
+      },
+      {
+        name:"Koszta Procesu egzekucji",
+        initial:"154",
+        actual: "4546"
+      },
+      {
+        name:"Koszty klauzuli na małżonka",
+        initial:"56",
+        actual: "5645"
+      },
+      {
+        name:"Opłaty",
+        initial:"456",
+        actual: "1201"
+      },
+      {
+        name:"Prowizja",
+        initial:"4564",
+        actual: "45643"
+      }
+    ];
   this.elements = [
     {
       name: "Button1"

@@ -4,7 +4,7 @@
 			<div class="row dropdownOptions">
 				<p>Kod Finansowy</p>
 				<select ng-model="agenda.selectedFinancialCode">
-					<option ng-repeat="code in agenda.financeCodes" value="{{code.name}}">{{code.name}}</option>
+					<option class="optFinance" ng-repeat="code in agenda.financeCodes" value="{{code.name}}">{{code.name}}</option>
 				</select>
 				<p>{{selectedFinancialCode}}</p>
 			</div>
@@ -16,7 +16,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-2 col-md-offset-1">
+		<div class="col-md-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">Składniki</div>
 				<div class="panel-body" dragula='"bag-one"' dragula-model="agenda.elements" dragula-scope='$parent'>
@@ -63,40 +63,38 @@
 		<div class="col-md-2 col-md-offset-1">
 			<div class="row">
 				<div class="configInterestText">
-
 					<strong>Od czego naliczamy odsetki</strong>
-				</div>
+				
 				<div class="panel panel-default">
-					<div class="custom-control custom-radio">
-						<input type="radio" id="customRadio1" name="customRadio" ng-model="agenda.interestElement" value="WPS">
-						<label class="custom-control-label" for="customRadio1">WPS</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optradio" ng-model="agenda.interestElement" value="WPS">WPS</label>
 					</div>
-					<div class="custom-control custom-radio">
-						<input type="radio" id="customRadio2" name="customRadio" ng-model="agenda.interestElement" value="Kapitał">
-						<label class="custom-control-label" for="customRadio2">Kapitał</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optradio" ng-model="agenda.interestElement" value="Kapitał">Kapitał</label>
+					</div>
+					<div class="radio disabled">
+						<label>
+							<input type="radio" name="optradio" ng-model="agenda.interestElement" disabled value="Coś jeszcze">Coś jeszcze</label>
+					</div>
+				</div>
+					<div class="row">
+						<div class="btn-group-vertical">
+							<button class="btn btn-basic">Zacznij od nowa</button>
+							<button ng-disabled="!agenda.isFilled()" class="btn btn-primary" ng-click="agenda.compare()">Porownaj</button>
+							<button class="btn btn-success">Zatwierdz</button>
+
+						</div>
 					</div>
 				</div>
 
 			</div>
-			<div class="row">
-				<div class="btn-group-vertical">
-					<button class="btn btn-basic">Zacznij od nowa</button>
-					<button ng-disabled="!agenda.isFilled()" class="btn btn-primary" ng-click="agenda.compare()">Porownaj</button>
-					<button class="btn btn-success">Zatwierdz</button>
 
-				</div>
-			</div>
 
 		</div>
 	</div>
 </div>
-
-</div>
-</div>
-</div>
-
-</div>
-
 
 <div class="panel panel-default configuration">
 	<div class="panel panel-heading">Konfiguracja</div>

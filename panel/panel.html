@@ -1,0 +1,20 @@
+
+		<div class="container">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Początkowe</th>
+							<th>Aktualne</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="element in agenda.elementCollection">
+							<td>{{element.name}}</td>
+							<td>{{element.initial}}</td>
+							<td>{{element.actual}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
