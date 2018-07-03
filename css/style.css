@@ -21,8 +21,9 @@ body {
   font-size: large;
 }
 
-.configuration {
-  padding: 20px;
+.panel-heading {
+  padding: 10px;
+  text-align: center;
 }
 .panel-body button {
   display: block;            
@@ -39,10 +40,18 @@ body {
   margin: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .dropdownOptions  {
     display: inline-block;
     padding: 0 30px;
   }
   
+  }
+
+  @media (max-width: 320px) {
+    .dropdownOptions  {
+      font-size: 80%;
+      display: inline-block;
+      padding: 0 30px;
+    }
   }
