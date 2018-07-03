@@ -1,20 +1,70 @@
+<div class="container">
 
-		<div class="container">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th></th>
-							<th>Początkowe</th>
-							<th>Aktualne</th>
-						</tr>
-					</thead>
+	<div class="row">
+
+		<div class="col-sm-6 center-block">
+			<div class="panel panel-default">
+				<div class="panel-body table-responsive">
+					<table class="table table-bordered table-condensed">
+						<tbody>
+							<tr>
+								<td width="33%"> </td>
+								<td width="33%" class="">Początkowe</td>
+								<td width="33%" class="">Aktualne</td>
+							</tr>
+							<tr ng-repeat="element in agenda.elementCollection">
+								<td>{{element.name}}</td>
+								<td>{{element.initial}}</td>
+								<td>{{element.actual}}</td>
+							</tr>
+							<td>
+								<strong>KDW SUMA</strong>
+							</td>
+							<td>
+								<strong>12000.00</strong>
+							</td>
+							<td>
+								<strong>15000.59</strong>
+							</td>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="row">
+
+	<div class="col-sm-6 center-block">
+		<div class="panel panel-default">
+			<div class="panel-body table-responsive">
+				<table class="table table-bordered table-condensed">
 					<tbody>
-						<tr ng-repeat="element in agenda.elementCollection">
-							<td>{{element.name}}</td>
-							<td>{{element.initial}}</td>
-							<td>{{element.actual}}</td>
+						<tr>
+							<td width="33%">Id</td>
+							<td width="33%" class="">Name</td>
+							<td width="33%" class="">Status</td>
 						</tr>
+						<tr ng-repeat="issue in content">
+							<td>{{issue.id}}</td>
+							<td>{{issue.subject}}</td>
+							<td>{{issue.status.name}}</td>
+						</tr>
+						<td>
+							<strong>KDW SUMA</strong>
+						</td>
+						<td>
+							<strong>12000.00</strong>
+						</td>
+						<td>
+							<strong>15000.59</strong>
+						</td>
 					</tbody>
 				</table>
 			</div>
-
+		</div>
+	</div>
+</div>

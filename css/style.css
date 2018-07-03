@@ -55,3 +55,7 @@ body {
       padding: 0 30px;
     }
   }
+  .center-block {
+    float: none;
+    display: block;
+}
